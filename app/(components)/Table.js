@@ -1,7 +1,7 @@
 export default function Table({ data }) {
   return (
     <div className="overflow-x-scroll">
-      <table className="">
+      <table className="w-full">
         <thead className="bg-foreground">
           <tr>
             {Object.keys(data[0]).map((key) => (
@@ -13,12 +13,7 @@ export default function Table({ data }) {
                 {key}
               </th>
             ))}
-            <th
-              scope="col"
-              className="px-6 py-2 text-left text-base font-semibold text-black uppercase tracking-widest"
-            >
-              Modal
-            </th>
+            
           </tr>
         </thead>
         <tbody className="">
@@ -27,14 +22,12 @@ export default function Table({ data }) {
               {Object.values(row).map((value) => (
                 <td
                   key={value}
-                  className="px-6 py-3 whitespace-nowrap font-medium text-base"
+                  className="px-6 py-3 whitespace-nowrap  text-base"
                 >
                   {value}
                 </td>
               ))}
-              <td className="px-6 py-3 whitespace-nowrap font-medium text-base">
-                <button>Open</button>
-              </td>
+              
             </tr>
           ))}
         </tbody>
