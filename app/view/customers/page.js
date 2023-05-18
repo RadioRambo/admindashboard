@@ -4,8 +4,7 @@ import Heading from "@/app/(components)/Heading";
 import Table from "../../(components)/Table";
 import { useState, useEffect } from "react";
 
-let customersData = {
-  results: [
+let customersData = [
     {
       customer_id: 1,
       cabin: 1,
@@ -206,16 +205,7 @@ let customersData = {
       phone: "9876543234",
       gender: "male",
     },
-  ],
-  success: true,
-  meta: {
-    duration: 8.238646000623703,
-    last_row_id: 0,
-    changes: 0,
-    served_by: "SinglePrimary-bdcce3ba-ece4-4d89-92bc-612a3bcbc53d.db3",
-    internal_stats: null,
-  },
-};
+  ]
 
 export default function View() {
   // TODO Before build, remove comments and delete variable and check fetchData, remove console logs
