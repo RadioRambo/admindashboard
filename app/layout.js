@@ -1,12 +1,17 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import "./globals.css";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <nav className="bg-foreground px-2 gap-4 sm:gap-0 md:px-20 justify-between py-2 font-semibold text-2xl">
+          STUDY HALL
+        </nav>
+        {children}
+      </body>
     </html>
-  )
+  );
 }
