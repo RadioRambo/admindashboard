@@ -1,7 +1,7 @@
 export default function Table({ data }) {
   return (
     <div className="overflow-x-scroll">
-      <table className="w-full">
+      <table className="min-w-full">
         <thead className="bg-foreground">
           <tr>
             {Object.keys(data[0]).map((key) => (
