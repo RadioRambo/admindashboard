@@ -28,20 +28,37 @@ export default function () {
   }
 
   async function saveToDatabase() {
-    setTableData([
-      {
-        transaction_id: undefined,
-        customer_id: undefined,
-        transaction_date: undefined,
-        payment_mode: undefined,
-        payment_month: undefined,
-      },
-    ]);
-    setSubmitted(true);
-    console.log(tableData);
+    try {
+      console.log(JSON.stringify(tableData));
+      const response = await fetch(
+        "https://workers.tornarselectnet.workers.dev/api/add/payment",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(tableData),
+        }
+      );
 
-    // const response = await fetch('url', {});
-    // if success clean table and change button to "save"
+      const data = await response.json();
+
+      if (data.success || data[0].success) {
+        setSubmitted(true);
+
+        setTableData([
+          {
+            transaction_id: undefined,
+            customer_id: undefined,
+            transaction_date: undefined,
+            payment_mode: undefined,
+            payment_month: undefined,
+          },
+        ]);
+      } else console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
   }
   function addMore() {
     setSubmitted(false);
