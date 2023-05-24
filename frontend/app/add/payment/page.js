@@ -2,7 +2,7 @@
 import Heading from "@/app/(components)/Heading";
 import { useState } from "react";
 
-export default function () {
+export default function AddPayment () {
   const [submitted, setSubmitted] = useState(false);
   const [tableData, setTableData] = useState([
     {

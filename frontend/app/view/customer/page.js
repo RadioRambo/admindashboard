@@ -4,7 +4,7 @@ import Heading from "@/app/(components)/Heading";
 import Table from "../../(components)/Table";
 import { useState, useEffect } from "react";
 
-export default function View() {
+export default function ViewCustomer() {
   const [customersData, setCustomersData] = useState([
     {
       customer_id: undefined,

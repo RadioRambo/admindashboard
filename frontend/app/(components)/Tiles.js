@@ -1,7 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react";
-export default function (props) {
+export default function Tiles (props) {
   // const [dashboardTileData, setDashboardTileData] = useState(null);
 
   // useEffect(() => {
