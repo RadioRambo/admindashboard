@@ -25,9 +25,15 @@ The development server will start on port 3000. You can open your browser and na
 
 The admin dashboard includes the following features:
 
+Frontend
 * User management system: You can create, edit, and modify users.
 * Dashboard: The dashboard displays a list of all users and their information.
 * Payments management system: You can create, edit and modify payments
+
+Backend
+* Built API's using cloudflare workers
+* Used SQL to fetch data from database
+
 
 ### License
 
