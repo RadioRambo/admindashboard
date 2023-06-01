@@ -70,7 +70,9 @@ export default function ModifyCustomer() {
 
   async function fetchCustomerData() {
     try {
-      const response = await fetch("http://localhost:8787/api/view/customers");
+      const response = await fetch(
+        "https://a6kbmv3x3pjass8qn2fu76wqydvtvh.tornarselectnet.workers.dev/api/view/customers"
+      );
       const data = await response.json();
       console.log(data.results[tableData[0].customer_id - 1]);
       setTableData([data.results[tableData[0].customer_id - 1]]);
@@ -85,7 +87,7 @@ export default function ModifyCustomer() {
       {submitted ? (
         <div>
           <Heading title="Saved to Database" />
-          <button className="px-2 py-2  hover:bg-black/30 " onClick={addMore}>
+          <button className="px-2 py-2 hover:bg-black/30" onClick={addMore}>
             Add More?
           </button>
         </div>
@@ -100,7 +102,7 @@ export default function ModifyCustomer() {
                     <th
                       key={key}
                       scope="col"
-                      className="px-2 py-2 text-left text-base font-semibold text-black uppercase tracking-widest border-x-2 border-black/30"
+                      className="px-2 py-2 text-base font-semibold tracking-widest text-left text-black uppercase border-x-2 border-black/30"
                     >
                       {key}
                     </th>
@@ -110,11 +112,11 @@ export default function ModifyCustomer() {
               <tbody className="">
                 {tableData.map((row, i) => (
                   <tr key={i} className={i % 2 === 1 ? "bg-neutral-100" : ""}>
-                    <td className=" whitespace-nowrap  text-base border-2 border-foreground">
+                    <td className="text-base whitespace-nowrap border-2  border-foreground">
                       <input
                         placeholder="Enter ID first"
                         type="text"
-                        className="px-2 w-full py-2 bg-inherit"
+                        className="px-2 py-2 w-full bg-inherit"
                         onChange={(event) => {
                           tableData[i].customer_id = event.target.value;
                           fetchCustomerData();
@@ -124,13 +126,13 @@ export default function ModifyCustomer() {
                     <td
                       className={`whitespace-nowrap  text-base border-2 border-foreground ${
                         detailsFetched ? "" : "bg-black/5"
-                      } `}
+                      }`}
                     >
                       {detailsFetched ? (
                         <input
                           type="text"
                           defaultValue={tableData[i].cabin}
-                          className="px-2 w-full py-2 bg-inherit"
+                          className="px-2 py-2 w-full bg-inherit"
                           onChange={(event) => {
                             tableData[i].cabin = event.target.value;
                           }}
@@ -138,20 +140,20 @@ export default function ModifyCustomer() {
                       ) : (
                         <input
                           disabled
-                          className="disabled:bg-transparent w-full"
+                          className="w-full disabled:bg-transparent"
                         ></input>
                       )}
                     </td>
                     <td
                       className={`whitespace-nowrap  text-base border-2 border-foreground ${
                         detailsFetched ? "" : "bg-black/5"
-                      } `}
+                      }`}
                     >
                       {detailsFetched ? (
                         <input
                           type="text"
                           defaultValue={tableData[i].name}
-                          className="px-2 w-full py-2 bg-inherit"
+                          className="px-2 py-2 w-full bg-inherit"
                           onChange={(event) => {
                             tableData[i].name = event.target.value;
                           }}
@@ -159,20 +161,20 @@ export default function ModifyCustomer() {
                       ) : (
                         <input
                           disabled
-                          className="disabled:bg-transparent w-full"
+                          className="w-full disabled:bg-transparent"
                         ></input>
                       )}
                     </td>
                     <td
                       className={`whitespace-nowrap  text-base border-2 border-foreground ${
                         detailsFetched ? "" : "bg-black/5"
-                      } `}
+                      }`}
                     >
                       {detailsFetched ? (
                         <input
                           type="text"
                           defaultValue={tableData[i].email}
-                          className="px-2 w-full py-2 bg-inherit"
+                          className="px-2 py-2 w-full bg-inherit"
                           onChange={(event) => {
                             tableData[i].email = event.target.value;
                           }}
@@ -180,20 +182,20 @@ export default function ModifyCustomer() {
                       ) : (
                         <input
                           disabled
-                          className="disabled:bg-transparent w-full"
+                          className="w-full disabled:bg-transparent"
                         ></input>
                       )}
                     </td>
                     <td
                       className={`whitespace-nowrap  text-base border-2 border-foreground ${
                         detailsFetched ? "" : "bg-black/5"
-                      } `}
+                      }`}
                     >
                       {detailsFetched ? (
                         <input
                           type="text"
                           defaultValue={tableData[i].phone}
-                          className="px-2 w-full py-2 bg-inherit"
+                          className="px-2 py-2 w-full bg-inherit"
                           onChange={(event) => {
                             tableData[i].phone = event.target.value;
                           }}
@@ -201,20 +203,20 @@ export default function ModifyCustomer() {
                       ) : (
                         <input
                           disabled
-                          className="disabled:bg-transparent w-full"
+                          className="w-full disabled:bg-transparent"
                         ></input>
                       )}
                     </td>
                     <td
                       className={`whitespace-nowrap  text-base border-2 border-foreground ${
                         detailsFetched ? "" : "bg-black/5"
-                      } `}
+                      }`}
                     >
                       {detailsFetched ? (
                         <input
                           type="text"
                           defaultValue={tableData[i].gender}
-                          className="px-2 w-full py-2 bg-inherit"
+                          className="px-2 py-2 w-full bg-inherit"
                           onChange={(event) => {
                             tableData[i].gender = event.target.value;
                           }}
@@ -222,7 +224,7 @@ export default function ModifyCustomer() {
                       ) : (
                         <input
                           disabled
-                          className="disabled:bg-transparent w-full"
+                          className="w-full disabled:bg-transparent"
                         ></input>
                       )}
                     </td>
@@ -231,15 +233,15 @@ export default function ModifyCustomer() {
               </tbody>
             </table>
           </div>
-          <div className="flex  justify-between">
+          <div className="flex justify-between">
             <button
-              className="mt-4 text-base bg-foreground hover:bg-black/30 "
+              className="mt-4 text-base bg-foreground hover:bg-black/30"
               onClick={addRow}
             >
               {/* <img src="/add.svg" /> TODO Add multiple entries support */}
             </button>
             <button
-              className="mt-4 text-base bg-foreground px-6 py-1 hover:bg-black/30"
+              className="px-6 py-1 mt-4 text-base bg-foreground hover:bg-black/30"
               onClick={saveToDatabase}
             >
               Save
