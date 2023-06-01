@@ -22,7 +22,6 @@ export default function ViewCustomer() {
         "https://a6kbmv3x3pjass8qn2fu76wqydvtvh.tornarselectnet.workers.dev/api/view/customers"
       );
       const data = await response.json();
-      console.log(data.results);
       setCustomersData(data.results);
     } catch (e) {
       console.log(e);

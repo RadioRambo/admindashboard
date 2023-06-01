@@ -29,6 +29,8 @@ export default function ModifyPayment() {
   }
 
   async function saveToDatabase() {
+    //TODO Data not saving to database
+
     try {
       console.log(JSON.stringify(tableData));
       const response = await fetch(
@@ -65,15 +67,18 @@ export default function ModifyPayment() {
     setSubmitted(false);
   }
 
-  async function fetchCustomerData() {
+  async function fetchCustomerData(id) {
     try {
       const response = await fetch(
         "https://a6kbmv3x3pjass8qn2fu76wqydvtvh.tornarselectnet.workers.dev/api/view/payments"
       );
       const data = await response.json();
-      console.log(data.results);
-      //   console.log(data.results[tableData[0].transaction_id - 1]);
-      //   setTableData([data.results[tableData[0].transaction_id - 1]]);
+      for (let i = 0; i < data.results.length; i++) {
+        if (data.results[i].transaction_id === Number(id)) {
+          setTableData([data.results[i]]);
+          break;
+        }
+      }
       setDetailsFetched(true);
     } catch (e) {
       console.log(e);
@@ -110,7 +115,7 @@ export default function ModifyPayment() {
               <tbody className="">
                 {tableData.map((row, i) => (
                   <tr key={i} className={i % 2 === 1 ? "bg-neutral-100" : ""}>
-                    <td className="text-base whitespace-nowrap border-2  border-foreground">
+                    <td className="text-base whitespace-nowrap border-2 border-foreground">
                       <input
                         placeholder="Enter ID first"
                         type="text"
@@ -118,7 +123,7 @@ export default function ModifyPayment() {
                         onChange={(event) => {
                           tableData[i].transaction_id = event.target.value;
                           if (event.target.value.length === 7) {
-                            fetchCustomerData();
+                            fetchCustomerData(event.target.value);
                           }
                         }}
                       ></input>

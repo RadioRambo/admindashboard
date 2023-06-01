@@ -112,6 +112,13 @@ export default {
         return new Response(JSON.stringify(results), {
           headers: corsHeaders,
         });
+      } else if (pathname === "/api/duepayments") {
+        const results = await env.DB.prepare(
+          "SELECT COUNT(DISTINCT customer_id) AS unique_customers FROM payments_data WHERE payment_month != '2022-05-01';"
+        ).all();
+        return new Response(JSON.stringify(results), {
+          headers: corsHeaders,
+        });
       }
     } catch (e) {
       return Response.json(e);

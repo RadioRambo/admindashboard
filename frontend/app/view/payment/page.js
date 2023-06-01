@@ -18,10 +18,9 @@ export default function ViewPayment() {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "https://a6kbmv3x3pjass8qn2fu76wqydvtvh.tornarselectnet.workers.dev/api/view/payments_data"
+        "https://a6kbmv3x3pjass8qn2fu76wqydvtvh.tornarselectnet.workers.dev/api/view/payments"
       );
       const data = await response.json();
-      console.log(data);
       setPaymentsData(data.results);
     } catch (e) {
       console.log(e);

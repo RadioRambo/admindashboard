@@ -1,4 +1,4 @@
-name = "Dashboard Worker"
+name = "dashboardworker"
 main = "src/index.js"
 compatibility_date = "2023-05-23"
 

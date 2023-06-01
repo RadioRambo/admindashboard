@@ -8,26 +8,27 @@ export default function Table({ data }) {
               <th
                 key={key}
                 scope="col"
-                className="px-6 py-2 text-left text-base font-semibold text-black uppercase tracking-widest"
+                className="px-6 py-2 text-base font-semibold tracking-widest text-left text-black uppercase"
               >
                 {key}
               </th>
             ))}
-            
           </tr>
         </thead>
         <tbody className="">
-          {data.map((row, i) => (
-            <tr key={i} className={i % 2 === 1 ? "bg-neutral-100" : ""}>
-              {Object.values(row).map((value) => (
+          {data.map((row) => (
+            <tr
+              key={Object.values(row)[0]}
+              className={row.customer_id % 2 === 1 ? "bg-neutral-100" : ""}
+            >
+              {Object.values(row).map((value, index) => (
                 <td
-                  key={value}
-                  className="px-6 py-3 whitespace-nowrap  text-base"
+                  key={index}
+                  className="px-6 py-3 text-base whitespace-nowrap"
                 >
                   {value}
                 </td>
               ))}
-              
             </tr>
           ))}
         </tbody>
@@ -35,4 +36,3 @@ export default function Table({ data }) {
     </div>
   );
 }
-

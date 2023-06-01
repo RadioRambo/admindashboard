@@ -74,7 +74,6 @@ export default function ModifyCustomer() {
         "https://a6kbmv3x3pjass8qn2fu76wqydvtvh.tornarselectnet.workers.dev/api/view/customers"
       );
       const data = await response.json();
-      console.log(data.results[tableData[0].customer_id - 1]);
       setTableData([data.results[tableData[0].customer_id - 1]]);
       setDetailsFetched(true);
     } catch (e) {
@@ -112,7 +111,7 @@ export default function ModifyCustomer() {
               <tbody className="">
                 {tableData.map((row, i) => (
                   <tr key={i} className={i % 2 === 1 ? "bg-neutral-100" : ""}>
-                    <td className="text-base whitespace-nowrap border-2  border-foreground">
+                    <td className="text-base whitespace-nowrap border-2 border-foreground">
                       <input
                         placeholder="Enter ID first"
                         type="text"
@@ -125,8 +124,7 @@ export default function ModifyCustomer() {
                     </td>
                     <td
                       className={`whitespace-nowrap  text-base border-2 border-foreground ${
-                        detailsFetched ? "" : "bg-black/5"
-                      }`}
+                        detailsFetched ? "":"bg-black/5"}`}
                     >
                       {detailsFetched ? (
                         <input
@@ -146,8 +144,7 @@ export default function ModifyCustomer() {
                     </td>
                     <td
                       className={`whitespace-nowrap  text-base border-2 border-foreground ${
-                        detailsFetched ? "" : "bg-black/5"
-                      }`}
+                        detailsFetched ? "":"bg-black/5"}`}
                     >
                       {detailsFetched ? (
                         <input
@@ -167,8 +164,7 @@ export default function ModifyCustomer() {
                     </td>
                     <td
                       className={`whitespace-nowrap  text-base border-2 border-foreground ${
-                        detailsFetched ? "" : "bg-black/5"
-                      }`}
+                        detailsFetched ? "":"bg-black/5"}`}
                     >
                       {detailsFetched ? (
                         <input
@@ -188,8 +184,7 @@ export default function ModifyCustomer() {
                     </td>
                     <td
                       className={`whitespace-nowrap  text-base border-2 border-foreground ${
-                        detailsFetched ? "" : "bg-black/5"
-                      }`}
+                        detailsFetched ? "":"bg-black/5"}`}
                     >
                       {detailsFetched ? (
                         <input
@@ -209,8 +204,7 @@ export default function ModifyCustomer() {
                     </td>
                     <td
                       className={`whitespace-nowrap  text-base border-2 border-foreground ${
-                        detailsFetched ? "" : "bg-black/5"
-                      }`}
+                        detailsFetched ? "":"bg-black/5"}`}
                     >
                       {detailsFetched ? (
                         <input
