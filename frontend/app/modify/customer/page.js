@@ -113,7 +113,7 @@ export default function ModifyCustomer() {
                   <tr key={i} className={i % 2 === 1 ? "bg-neutral-100" : ""}>
                     <td className="text-base whitespace-nowrap border-2 border-foreground">
                       <input
-                        placeholder="Enter ID first"
+                        placeholder="Enter ID first (1-25)"
                         type="text"
                         className="px-2 py-2 w-full bg-inherit"
                         onChange={(event) => {
@@ -124,7 +124,8 @@ export default function ModifyCustomer() {
                     </td>
                     <td
                       className={`whitespace-nowrap  text-base border-2 border-foreground ${
-                        detailsFetched ? "":"bg-black/5"}`}
+                        detailsFetched ? "" : "bg-black/5"
+                      }`}
                     >
                       {detailsFetched ? (
                         <input
@@ -137,6 +138,7 @@ export default function ModifyCustomer() {
                         ></input>
                       ) : (
                         <input
+                          placeholder="Number"
                           disabled
                           className="w-full disabled:bg-transparent"
                         ></input>
@@ -144,7 +146,8 @@ export default function ModifyCustomer() {
                     </td>
                     <td
                       className={`whitespace-nowrap  text-base border-2 border-foreground ${
-                        detailsFetched ? "":"bg-black/5"}`}
+                        detailsFetched ? "" : "bg-black/5"
+                      }`}
                     >
                       {detailsFetched ? (
                         <input
@@ -157,6 +160,7 @@ export default function ModifyCustomer() {
                         ></input>
                       ) : (
                         <input
+                          placeholder="String"
                           disabled
                           className="w-full disabled:bg-transparent"
                         ></input>
@@ -164,7 +168,8 @@ export default function ModifyCustomer() {
                     </td>
                     <td
                       className={`whitespace-nowrap  text-base border-2 border-foreground ${
-                        detailsFetched ? "":"bg-black/5"}`}
+                        detailsFetched ? "" : "bg-black/5"
+                      }`}
                     >
                       {detailsFetched ? (
                         <input
@@ -177,6 +182,7 @@ export default function ModifyCustomer() {
                         ></input>
                       ) : (
                         <input
+                          placeholder="String"
                           disabled
                           className="w-full disabled:bg-transparent"
                         ></input>
@@ -184,7 +190,8 @@ export default function ModifyCustomer() {
                     </td>
                     <td
                       className={`whitespace-nowrap  text-base border-2 border-foreground ${
-                        detailsFetched ? "":"bg-black/5"}`}
+                        detailsFetched ? "" : "bg-black/5"
+                      }`}
                     >
                       {detailsFetched ? (
                         <input
@@ -197,6 +204,7 @@ export default function ModifyCustomer() {
                         ></input>
                       ) : (
                         <input
+                          placeholder="Number"
                           disabled
                           className="w-full disabled:bg-transparent"
                         ></input>
@@ -204,7 +212,8 @@ export default function ModifyCustomer() {
                     </td>
                     <td
                       className={`whitespace-nowrap  text-base border-2 border-foreground ${
-                        detailsFetched ? "":"bg-black/5"}`}
+                        detailsFetched ? "" : "bg-black/5"
+                      }`}
                     >
                       {detailsFetched ? (
                         <input
@@ -217,6 +226,7 @@ export default function ModifyCustomer() {
                         ></input>
                       ) : (
                         <input
+                          placeholder="male or female"
                           disabled
                           className="w-full disabled:bg-transparent"
                         ></input>

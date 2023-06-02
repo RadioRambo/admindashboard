@@ -117,7 +117,7 @@ export default function ModifyPayment() {
                   <tr key={i} className={i % 2 === 1 ? "bg-neutral-100" : ""}>
                     <td className="text-base whitespace-nowrap border-2 border-foreground">
                       <input
-                        placeholder="Enter ID first"
+                        placeholder="(1000001 - 1000072)"
                         type="text"
                         className="px-2 py-2 w-full bg-inherit"
                         onChange={(event) => {
@@ -136,6 +136,7 @@ export default function ModifyPayment() {
                       {detailsFetched ? (
                         <input
                           type="text"
+                          placeholder="(1000001 - 1000072)"
                           defaultValue={tableData[i].customer_id}
                           className="px-2 py-2 w-full bg-inherit"
                           onChange={(event) => {
@@ -144,6 +145,7 @@ export default function ModifyPayment() {
                         ></input>
                       ) : (
                         <input
+                          placeholder="Number"
                           disabled
                           className="w-full disabled:bg-transparent"
                         ></input>
@@ -165,6 +167,7 @@ export default function ModifyPayment() {
                         ></input>
                       ) : (
                         <input
+                          placeholder="YYYY-MM-DD"
                           disabled
                           className="w-full disabled:bg-transparent"
                         ></input>
@@ -186,6 +189,7 @@ export default function ModifyPayment() {
                         ></input>
                       ) : (
                         <input
+                          placeholder="offline or online"
                           disabled
                           className="w-full disabled:bg-transparent"
                         ></input>
@@ -207,6 +211,7 @@ export default function ModifyPayment() {
                         ></input>
                       ) : (
                         <input
+                          placeholder="YYYY-MM-DD"
                           disabled
                           className="w-full disabled:bg-transparent"
                         ></input>
